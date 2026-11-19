@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página personal de Ángel Juárez, estudiante de Ingeniería en Sistemas Computacionales.">
+  <title>Ángel Juárez | Página personal</title>
+
+  <style>
+    /* ---------- Variables de diseño ---------- */
+    :root {
+      --bg: #0f1020;
+      --card: #1a1b30;
+      --card-border: #2c2e4d;
+      --text: #e8e9f5;
+      --muted: #a3a6c4;
+      --accent: #7c5cff;
+      --accent-2: #22d3ee;
+    }
+
+    /* ---------- Reset y base ---------- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(100% - 2rem, 760px);
+      margin-inline: auto;
+    }
+
+    /* ---------- Encabezado ---------- */
+    header {
+      padding: 4rem 0 3rem;
+      text-align: center;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(124, 92, 255, 0.35), transparent 50%),
+        radial-gradient(circle at 80% 10%, rgba(34, 211, 238, 0.25), transparent 50%);
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 1.25rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 8px 30px rgba(124, 92, 255, 0.45);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 7vw, 3rem);
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin-top: 0.5rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    /* ---------- Secciones ---------- */
+    section { margin: 1.5rem 0; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h2::before {
+      content: "";
+      width: 6px;
+      height: 1.2em;
+      border-radius: 3px;
+      background: linear-gradient(var(--accent), var(--accent-2));
+    }
+
+    p { color: var(--muted); }
+
+    /* ---------- Lista de intereses ---------- */
+    .interests {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .interests li {
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      background: rgba(124, 92, 255, 0.15);
+      border: 1px solid rgba(124, 92, 255, 0.4);
+      color: var(--text);
+      font-weight: 500;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .interests li:hover {
+      transform: translateY(-2px);
+      background: rgba(124, 92, 255, 0.3);
+    }
+
+    /* ---------- Lo que quiero aprender ---------- */
+    .learn-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .learn-item {
+      padding: 1.1rem;
+      border-radius: 14px;
+      background: rgba(34, 211, 238, 0.08);
+      border: 1px solid rgba(34, 211, 238, 0.3);
+    }
+
+    .learn-item h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+    }
+
+    /* ---------- Botón de GitHub ---------- */
+    .btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(124, 92, 255, 0.4);
+    }
+
+    /* ---------- Pie de página ---------- */
+    footer {
+      text-align: center;
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* ---------- Pantallas más grandes ---------- */
+    @media (min-width: 600px) {
+      .learn-grid { grid-template-columns: 1fr 1fr; }
+      .card { padding: 2rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Encabezado con el nombre -->
+  <header>
+    <div class="container">
+      <div class="avatar" aria-hidden="true">AJ</div>
+      <h1>Ángel Juárez</h1>
+      <p class="subtitle">Estudiante de Ingeniería en Sistemas Computacionales</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Sobre mí -->
+    <section class="card" id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <p>
+        ¡Hola! Soy Ángel Juárez, estudiante de primer semestre de Ingeniería en
+        Sistemas Computacionales en la Universidad La Salle Chihuahua. Estoy
+        empezando mi camino en el mundo de la tecnología y tengo muchas ganas de
+        aprender y crear mis propios proyectos.
+      </p>
+    </section>
+
+    <!-- Intereses -->
+    <section class="card" id="intereses">
+      <h2>Mis intereses</h2>
+      <ul class="interests">
+        <li>🏋️ Gym</li>
+        <li>💻 Software</li>
+        <li>✏️ Dibujo</li>
+        <li>🎮 Videojuegos</li>
+        <li>📺 Anime</li>
+      </ul>
+    </section>
+
+    <!-- Lo que quiero aprender -->
+    <section class="card" id="aprender">
+      <h2>Lo que quiero aprender</h2>
+      <div class="learn-grid">
+        <div class="learn-item">
+          <h3>📐 Matemáticas</h3>
+          <p>Construir una base sólida para entender cómo funciona la computación por dentro.</p>
+        </div>
+        <div class="learn-item">
+          <h3>⌨️ Programación</h3>
+          <p>Escribir código cada vez mejor y convertir mis ideas en programas reales.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub -->
+    <section class="card" id="github">
+      <h2>Mi GitHub</h2>
+      <p>Aquí puedes ver mis repositorios y los proyectos en los que estoy trabajando.</p>
+      <a class="btn" href="https://github.com/Serafron" target="_blank" rel="noopener noreferrer">
+        Visitar mi perfil de GitHub
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Ángel Juárez · Universidad La Salle Chihuahua</p>
+  </footer>
+</body>
+</html>
